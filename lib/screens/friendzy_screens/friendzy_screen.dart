@@ -16,14 +16,17 @@ class FriendzyScreenState extends State<FriendzyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.only(top: 10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FriendzyItem(),
             FriendzyItem2(),
             FriendzyItem3(),
+            FriendzyItem3(),
+            FriendzyItem3(),
+
           ],
         ),
       ),
@@ -33,12 +36,17 @@ class FriendzyScreenState extends State<FriendzyScreen> {
   AppBar _buildAppBar() {
     return AppBar(
       elevation: 0,
+      backgroundColor: Color(0xFFFDF7FD),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "Friendzy",
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 28, color: Color(0xFF4B164C)),
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 28,
+              color: Color(0xFF4B164C),
+            ),
           ),
           Image.asset('assets/images/notify_icon.png', width: 48, height: 48),
         ],
