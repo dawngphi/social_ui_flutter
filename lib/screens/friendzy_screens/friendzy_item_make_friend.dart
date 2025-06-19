@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FriendzyItem2 extends StatefulWidget {
+class FriendzyItemMakeFriend extends StatefulWidget {
   @override
-  _FriendzyItem2State createState() => _FriendzyItem2State();
+  _FriendzyItemMakeFriendState createState() => _FriendzyItemMakeFriendState();
 }
 
-class _FriendzyItem2State extends State<FriendzyItem2> {
+class _FriendzyItemMakeFriendState extends State<FriendzyItemMakeFriend> {
   bool isMakeFriendsSelected = true;
 
   @override

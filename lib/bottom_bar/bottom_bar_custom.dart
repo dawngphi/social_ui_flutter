@@ -30,7 +30,7 @@ class BottomBarState extends State<BottomBar> {
         body: Stack(
           children: [
             AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 100),
               transitionBuilder: (child, animation) =>
                   FadeTransition(opacity: animation, child: child),
               child: _screens[currentPageIndex],
