@@ -102,7 +102,6 @@ class _DiscoverItemNewStoryState extends State<DiscoverItemNewStory> {
                           ),
                         ],
                       ),
-
                       Text(
                         storyNew.location,
                         style: TextStyle(

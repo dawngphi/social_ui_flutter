@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:social_ui/screens/matches_screens/matches_like_item.dart';
+import 'package:social_ui/screens/matches_screens/your_matches_item.dart';
 
 class MatchesScreen extends StatefulWidget {
   const MatchesScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class MatchesScreenState extends State<MatchesScreen> {
         padding: const EdgeInsets.only(top: 10),
         children: [
           MatchesLikeItem(),
+          YourMatchesItem(),
         ],
       ),
     );
@@ -25,7 +27,9 @@ class MatchesScreenState extends State<MatchesScreen> {
   AppBar _buildAppbar() {
     return AppBar(
       elevation: 0,
+      backgroundColor: Color(0xFFFDF7FD),
       leading: IconButton(
+        padding: EdgeInsets.only(left: 16),
         onPressed: () {},
         icon: Image.asset(
           'assets/images/back_icon.png',

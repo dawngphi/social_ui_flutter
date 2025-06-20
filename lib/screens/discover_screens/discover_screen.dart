@@ -17,7 +17,9 @@ class DiscoverScreenState extends State<DiscoverScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
-      body: ListView(padding: const EdgeInsets.only(top: 10), children: [
+      body: ListView(
+        padding: const EdgeInsets.only(top: 10),
+        children: [
         DiscoverItemNewStory(),
         DiscoverItemInterest(),
         DiscoverItemAroundMe(),

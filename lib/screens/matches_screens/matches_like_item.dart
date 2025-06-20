@@ -39,7 +39,7 @@ class MatchesLikeItemState extends State<MatchesLikeItem> {
                     fit: StackFit.expand,
                     children: [
                       ImageFiltered(
-                        imageFilter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                        imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                         child: Image.asset(
                           matches.imagePath,
                           fit: BoxFit.cover,
@@ -47,7 +47,7 @@ class MatchesLikeItemState extends State<MatchesLikeItem> {
                       ),
 
                       Container(
-                        color: Colors.black.withOpacity(0.15),
+                        color: Colors.black.withValues(alpha: 0.15),
                       ),
                       Center(
                         child: Image.asset(
@@ -69,7 +69,7 @@ class MatchesLikeItemState extends State<MatchesLikeItem> {
                     style: const TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w400),
                   ),
                   SizedBox(width: 3,),
-                  Text(matches.quantity.toString(), style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14, color: Colors.pink),)
+                  Text(matches.quantity.toString(), style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14,  color: Color(0xFFDD88CF)),)
                 ],
               )
 

@@ -40,7 +40,7 @@ class DiscoverItemAroundMe extends StatelessWidget {
               child: Image.asset(
                 "assets/images/aroundyou.png",
                 fit: BoxFit.cover,
-                height: 500,
+                height: 800,
               ),
             ),
           ),
