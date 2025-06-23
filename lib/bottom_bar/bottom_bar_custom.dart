@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:social_ui/screens/add_new_screens/add_new_screen.dart';
 import 'package:social_ui/screens/discover_screens/discover_screen.dart';
+import 'package:social_ui/screens/edit_profile_screens/edit_profile_screen.dart';
 import 'package:social_ui/screens/friendzy_screens/friendzy_screen.dart';
 import 'package:social_ui/screens/matches_screens/matches_screen.dart';
 import 'package:social_ui/screens/messages_screens/messages_screen.dart';
@@ -18,7 +19,7 @@ class BottomBarState extends State<BottomBar> {
   final List<Widget> _screens = [
     FriendzyScreen(key: ValueKey('Friendzy')),
     DiscoverScreen(key: ValueKey('Discover')),
-    AddNewScreen(key: ValueKey('AddNew')),
+    EditProfileScreen(key: ValueKey('EditProfile')),
     MatchesScreen(key: ValueKey('Matches')),
     MessagesScreen(key: ValueKey('Messages')),
   ];
@@ -27,6 +28,7 @@ class BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: Stack(
           children: [
             AnimatedSwitcher(

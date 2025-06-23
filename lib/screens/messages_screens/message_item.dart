@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../bottom_bar/models/message_model.dart';
+
 class MessageItem extends StatefulWidget {
+  final MessageModel message;
+
+  const MessageItem({super.key, required this.message});
   @override
   State<StatefulWidget> createState() => MessageItemState();
 }
@@ -8,29 +13,29 @@ class MessageItem extends StatefulWidget {
 class MessageItemState extends State<MessageItem> {
   @override
   Widget build(BuildContext context) {
+    final msg = widget.message;
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 20,),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(35),
             child: Image.asset(
-              "assets/images/james.png",
+              msg.imagePath,
               width: 56,
               height: 56,
               fit: BoxFit.cover,
             ),
           ),
           SizedBox(width: 12),
-          // Nội dung tin nhắn
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Alfredo Calzoni",
+                  msg.name,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
@@ -39,7 +44,7 @@ class MessageItemState extends State<MessageItem> {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  "What about that new jacket if I ...",
+                  msg.message,
                   style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -49,17 +54,18 @@ class MessageItemState extends State<MessageItem> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                width: 12,
-                height: 12,
-                decoration: BoxDecoration(
-                  color: Color(0xFFE9A8E2),
-                  shape: BoxShape.circle,
+              if (!msg.readMessage)
+                Container(
+                  width: 12,
+                  height: 12,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFE9A8E2),
+                    shape: BoxShape.circle,
+                  ),
                 ),
-              ),
               SizedBox(height: 8),
               Text(
-                "09:18",
+                msg.time,
                 style: TextStyle(fontSize: 13, color: Colors.grey[500]),
               ),
             ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:social_ui/bottom_bar/models/matches_model.dart';
 import '../../bottom_bar/models/friendzy_data.dart';
 
-class MatchesLikeItem extends StatefulWidget {
+class   MatchesLikeItem extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => MatchesLikeItemState();
 }

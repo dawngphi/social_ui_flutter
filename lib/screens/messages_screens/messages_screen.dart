@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:social_ui/bottom_bar/models/message_model.dart';
 import 'package:social_ui/screens/messages_screens/message_item.dart';
 import 'package:social_ui/screens/messages_screens/recent_matches_item.dart';
+
+import '../../bottom_bar/models/message_model.dart';
 
 class MessagesScreen extends StatefulWidget {
   const MessagesScreen({Key? key}) : super(key: key);
@@ -30,8 +31,9 @@ class MessagesScreenState extends State<MessagesScreen> {
               RecentMatchesItem(),
               SizedBox(height: 20),
               Expanded(
+
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16,),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -40,17 +42,16 @@ class MessagesScreenState extends State<MessagesScreen> {
                     ),
                   ),
                   child: ListView.separated(
+                    padding: const EdgeInsets.only(bottom: 80),
                     scrollDirection: Axis.vertical,
                     // shrinkWrap: true,
                     // physics: NeverScrollableScrollPhysics(),
-                    separatorBuilder: (context, index) => Divider(
-                      thickness: 1,
-                      height: 1,
-                      color: Colors.black12,
-                    ),
+                    separatorBuilder: (context, index) =>
+                        Divider(thickness: 1, height: 1, color: Colors.black12),
                     itemCount: messageData.length,
                     itemBuilder: (context, index) {
-                      return MessageItem();
+                      final message = messageData[index];
+                      return MessageItem(message: message);
                     },
                   ),
                 ),
