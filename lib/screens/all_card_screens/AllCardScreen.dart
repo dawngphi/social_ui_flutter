@@ -15,37 +15,15 @@ class AllCardScreenState extends State<AllCardScreen> {
     return Scaffold(
       appBar: _buildAppbar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-        height: 56,
-        margin: const EdgeInsets.all(16),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF0066FF),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                16,
-              ),
-            ),
-          ),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Add Card',
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
-                ),
-                SizedBox(width: 8),
-                Image.asset("assets/images/add_icon2.png", width: 12, height: 12,)
-              ],
-            )
-          ),
-        ),
-      ),
+      floatingActionButton: AddCardButton(title: "Add Card", icon: "assets/images/add_icon2.png",onTap : (){
+
+      }),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
-        child: Column(children: [CardItem(), SizedBox(height: 35), CardItem()]),
+        child: Column(children: [
+          CardItem(backgroungCard: "assets/images/background_card.png", cardType: "assets/images/master_card.png",),
+          SizedBox(height: 35),
+          CardItem(backgroungCard: "assets/images/card_background.png", cardType: "assets/images/visa.png",)]),
       ),
     );
   }

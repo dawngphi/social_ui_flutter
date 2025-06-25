@@ -5,12 +5,14 @@ class EditProfileFullnameItem extends StatefulWidget {
   final String textFile;
   final String? iconLeft;
   final String? iconRight;
+  final bool obscureText;
 
   EditProfileFullnameItem({
     required this.title,
     required this.textFile,
     this.iconLeft,
-    this.iconRight
+    this.iconRight,
+    required this.obscureText
   });
 
   @override
@@ -19,17 +21,24 @@ class EditProfileFullnameItem extends StatefulWidget {
 
 class EditProfileFullnameItemState extends State<EditProfileFullnameItem> {
   late TextEditingController _nameController;
+  late bool _isObscured;
 
   @override
   void initState() {
     super.initState();
     _nameController = TextEditingController(text: widget.textFile);
+    _isObscured = widget.obscureText;
   }
 
   @override
   void dispose() {
     _nameController.dispose();
     super.dispose();
+  }
+  void _toggleObscure() {
+    setState(() {
+      _isObscured = !_isObscured;
+    });
   }
 
   @override
@@ -41,6 +50,7 @@ class EditProfileFullnameItemState extends State<EditProfileFullnameItem> {
         SizedBox(height: 12),
         TextFormField(
           controller: _nameController,
+          obscureText: _isObscured,
           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
           decoration: InputDecoration(
             contentPadding: EdgeInsets.only(bottom: 10),
@@ -51,10 +61,17 @@ class EditProfileFullnameItemState extends State<EditProfileFullnameItem> {
                     child: Image.asset(widget.iconLeft!, width: 22, height: 22),
                   )
                 : null,
-            suffixIcon: widget.iconRight != null && widget.iconRight!.isNotEmpty
-                ? Padding(
-              padding: EdgeInsets.only(right: 8, ),
-              child: Image.asset(widget.iconRight!, width: 22, height: 22),
+            suffixIcon: widget.iconRight != null
+                ? GestureDetector(
+              onTap: _toggleObscure,
+              child: Padding(
+                padding: EdgeInsets.only(right: 8),
+                child: Image.asset(
+                  widget.iconRight!,
+                  width: 22,
+                  height: 22,
+                ),
+              ),
             )
                 : null,
             prefixIconConstraints: BoxConstraints(minWidth: 22, minHeight: 22),

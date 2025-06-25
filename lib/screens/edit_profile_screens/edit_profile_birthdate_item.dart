@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class EditProfileBirthDateItem extends StatefulWidget {
+  final String title;
+
+  const EditProfileBirthDateItem({super.key, required this.title});
+
   @override
   State<StatefulWidget> createState() => EditProfileBirthDateItemState();
 }
@@ -12,7 +16,7 @@ class EditProfileBirthDateItemState extends State<EditProfileBirthDateItem> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-         "Birth Date",
+         widget.title,
           style: TextStyle(color: Colors.grey, fontSize: 13),
         ),
         SizedBox(height: 12),

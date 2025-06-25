@@ -17,7 +17,10 @@ class AddNewCardScreenState extends State<AddNewCardScreen> {
         padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [CardItem(), SizedBox(height: 35), AddNewCardNameItem()],
+          children: [
+            CardItem(backgroungCard: "assets/images/background_card.png", cardType: "assets/images/master_card.png",),
+            SizedBox(height: 35),
+            AddNewCardNameItem()],
         ),
       ),
     );

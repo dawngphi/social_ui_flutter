@@ -15,22 +15,19 @@ class AddNewCardNameItemState extends State<AddNewCardNameItem> {
           title: "Cardholder Name",
           textFile: "Tanya Myroniuk",
           iconLeft: "assets/images/user_icon.png",
+          obscureText: false,
         ),
         SizedBox(height: 20),
         Row(
           children: [
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  EditProfileFullnameItem(
-                    title: "Expiry Date",
-                    textFile: "09/06/2024",
-                  ),
-                ],
+              child: EditProfileFullnameItem(
+                title: "Expiry Date",
+                textFile: "09/06/2024",
+                obscureText: false,
               ),
             ),
-            SizedBox(width: 120),
+            Expanded(child: SizedBox()),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,6 +35,7 @@ class AddNewCardNameItemState extends State<AddNewCardNameItem> {
                   EditProfileFullnameItem(
                     title: "4-digit CVV",
                     textFile: "6986",
+                    obscureText: false,
                   ),
                 ],
               ),
@@ -50,6 +48,7 @@ class AddNewCardNameItemState extends State<AddNewCardNameItem> {
           textFile: "4562 1122 4595 7852",
           iconLeft: "assets/images/card_icon.png",
           iconRight: "assets/images/master_icon.png",
+          obscureText: false,
         ),
       ],
     );

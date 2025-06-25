@@ -20,13 +20,13 @@ class EditProfileScreenState extends State<EditProfileScreen> {
           children: [
             Align(alignment: Alignment.center, child: EditProfileAvatarItem()),
             SizedBox(height: 30,),
-            EditProfileFullnameItem(title: "Full Name", textFile: "Tanya Myroniuk123",iconLeft: "assets/images/user_icon.png",),
+            EditProfileFullnameItem(title: "Full Name", textFile: "Tanya Myroniuk123",iconLeft: "assets/images/user_icon.png", obscureText: false,),
             SizedBox(height: 20,),
-            EditProfileFullnameItem(title: "Email Address", textFile: "Tanya Myroniuk@gmail.com",iconLeft: "assets/images/email_icon.png",),
+            EditProfileFullnameItem(title: "Email Address", textFile: "Tanya Myroniuk@gmail.com",iconLeft: "assets/images/email_icon.png", obscureText: false,),
             SizedBox(height: 20,),
-            EditProfileFullnameItem(title: "Phone Number", textFile: "+8801712663389",iconLeft: "assets/images/phone_icon.png",),
+            EditProfileFullnameItem(title: "Phone Number", textFile: "+8801712663389",iconLeft: "assets/images/phone_icon.png", obscureText: false,),
             SizedBox(height: 20,),
-            EditProfileBirthDateItem(),
+            EditProfileBirthDateItem(title: "Birth Date",),
             SizedBox(height: 100),
             Text("Joined 28 Jan 2021")
           ],
